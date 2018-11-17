@@ -34,7 +34,7 @@ def upgrade():
     op.create_table('books',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=255), nullable=False),
-    sa.Column('isbn', sa.Integer(), nullable=False),
+    sa.Column('isbn', sa.BigInteger(), nullable=False),
     sa.Column('year', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('isbn')

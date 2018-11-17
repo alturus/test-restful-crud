@@ -14,7 +14,7 @@ class Book(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
-    isbn = db.Column(db.Integer, unique=True, nullable=False)
+    isbn = db.Column(db.BigInteger, unique=True, nullable=False)
     year = db.Column(db.Integer)
     authors = db.relationship('Author', secondary=book_author, lazy='subquery',
                               backref=db.backref('books', lazy=True))
